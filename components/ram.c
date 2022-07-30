@@ -74,7 +74,7 @@
 		}
 
 		return fmt_human((total - free - buffers - cached) * 1024,
-		                 1024);
+		                 1000);
 	}
 #elif defined(__OpenBSD__)
 	#include <stdlib.h>
@@ -151,7 +151,7 @@
 		if (load_uvmexp(&uvmexp)) {
 			return fmt_human(pagetok(uvmexp.active,
 			                         uvmexp.pageshift) * 1024,
-			                 1024);
+			                 1000);
 		}
 
 		return NULL;
@@ -217,6 +217,6 @@
 				|| !len)
 			return NULL;
 
-		return fmt_human(active * getpagesize(), 1024);
+		return fmt_human(active * getpagesize(), 1000);
 	}
 #endif

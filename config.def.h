@@ -66,5 +66,6 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function          format          argument */
 	{ cpu_perc,          "󰻠 %s%% ",           NULL    }, /* TODO: Add a 32 bit glyph for old RPis */
+	{ ram_used,          "󰨝 %s ",            NULL    },
 	{ datetime,          " 󰃭 %s ",           "%Y %b %d %a %H:%M" },
 };
